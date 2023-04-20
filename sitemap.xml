@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jobPosting xmlns="https://schema.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://schema.org/ https://schema.org/docs/releases.html">
   <title>Vendedor - Marketing Digital</title>
-  <description>Estamos procurando um vendedor para a equipe de marketing digital. O candidato ideal deve ter conhecimento de redes sociais, aptidão com negócios, conhecimento básico em tecnologia, acesso à internet, pró-atividade, criatividade, disponibilidade de tempo, compreensão básica de processo organizacional, não precisa experiência.</description>
+  <description>Estamos procurando um vendedor para a equipe de marketing digital. O candidato ideal deve ter conhecimento de redes sociais, aptidão com negócios, conhecimento básico em tecnologia, acesso à internet, pró-atividade, criatividade, disponibilidade de tempo, compreensão básica de processo organizacional, não precisa experiência. Candidatos de qualquer local do Brasil. Enviar currículo ao e-mail willian@corretordeseguroscwb.com.br</description>
   <datePosted>2023-04-19T09:00:00-07:00</datePosted>
   <validThrough>2023-05-19T23:59:59-07:00</validThrough>
   <employmentType>CONTRACTOR</employmentType>
@@ -17,10 +17,9 @@
   <baseSalary>
     <monetaryAmount currency="BRL">
       <value>
-        <quantitativeValue value="0" unitText="MONTH"/>
+        <quantitativeValue minValue="1500" maxValue="3000" unitText="MONTH"/>
       </value>
     </monetaryAmount>
   </baseSalary>
   <skills>Redes Sociais,Marketing Digital,Vendas</skills>
 </jobPosting>
-
