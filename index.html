@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Cotas - Seguros e Consórcios</title>
     <style>
         * {
@@ -12,72 +12,79 @@
             font-family: 'Arial', sans-serif;
         }
 
+        html, body {
+            width: 100%;
+            overflow-x: hidden; /* Impede rolagem horizontal no nível mais alto */
+        }
+
         body {
             background-color: #0A1C3A;
             color: #fff;
             line-height: 1.6;
-            overflow-x: hidden; /* Impede rolagem horizontal */
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 100%; /* Garante que o container nunca exceda a largura da tela */
+            width: 100%;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
-            width: 100%; /* Garante que o container não exceda a largura da tela */
-            box-sizing: border-box; /* Inclui padding na largura total */
+            overflow-x: hidden; /* Segurança extra */
         }
 
         img, iframe, video, object {
-            max-width: 100%; /* Impede que imagens excedam a largura do contêiner */
+            max-width: 100%;
             height: auto;
         }
 
         header {
-            padding: 20px 0;
+            padding: 15px 0;
         }
 
         header img {
-            max-width: 200px;
+            max-width: 180px; /* Reduzindo um pouco o tamanho da logo para telas menores */
         }
 
         h1 {
-            font-size: 2.5em;
-            margin: 20px 0;
+            font-size: 2.2em;
+            margin: 15px 0;
             color: #F5A623;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         h2 {
-            font-size: 1.8em;
-            margin: 20px 0;
+            font-size: 1.6em;
+            margin: 15px 0;
             color: #fff;
         }
 
         p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
+            font-size: 1em;
+            margin-bottom: 15px;
         }
 
         .highlight {
             background: linear-gradient(135deg, #1E3A8A, #2B4B9A);
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px 0;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #F5A623, #D48F1F);
             color: #fff;
-            padding: 15px 30px;
+            padding: 12px 25px;
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.1em;
             border-radius: 8px;
-            margin: 10px;
+            margin: 8px;
             transition: transform 0.2s, box-shadow 0.3s;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            max-width: 90%; /* Garante que o botão não exceda a largura */
         }
 
         .cta-button:hover {
@@ -86,40 +93,44 @@
         }
 
         .section {
-            margin: 40px 0;
+            margin: 30px 0;
         }
 
         .consorcio, .seguros {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         .card {
             background: linear-gradient(135deg, #1E3A8A, #2B4B9A);
-            padding: 20px;
-            border-radius: 15px;
+            padding: 15px;
+            border-radius: 10px;
             width: 45%;
-            min-width: 300px;
+            min-width: 280px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         .card ul {
             list-style: none;
             text-align: left;
-            padding-left: 20px;
+            padding-left: 15px;
         }
 
         .card ul li {
             position: relative;
-            margin: 10px 0;
+            margin: 8px 0;
         }
 
         .card ul li::before {
             content: '•';
             position: absolute;
-            left: -20px;
+            left: -15px;
             color: #F5A623;
             font-size: 1.2em;
         }
@@ -127,18 +138,21 @@
         .form-section {
             background-color: #fff;
             color: #0A1C3A;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 40px 0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         .form-section input, .form-section textarea {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
+            padding: 8px;
+            margin: 8px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box;
         }
 
         .form-section button {
@@ -149,6 +163,8 @@
             border-radius: 5px;
             cursor: pointer;
             transition: transform 0.2s, box-shadow 0.3s;
+            width: 100%;
+            max-width: 200px;
         }
 
         .form-section button:hover {
@@ -157,47 +173,65 @@
         }
 
         footer {
-            margin-top: 40px;
-            padding: 20px;
+            margin-top: 30px;
+            padding: 15px;
             background: linear-gradient(135deg, #1E3A8A, #2B4B9A);
-            border-radius: 15px;
+            border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         .contact-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
+            max-width: 100%;
         }
 
         .contact-buttons a {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 10px; /* Reduz o padding em telas menores para evitar overflow */
+                padding: 8px; /* Reduzindo ainda mais o padding */
             }
 
             .card {
                 width: 100%;
-                padding: 15px;
+                padding: 10px;
+                min-width: unset; /* Remove a largura mínima para telas pequenas */
             }
 
             .cta-button {
                 display: block;
-                margin: 10px auto;
+                margin: 8px auto;
+                padding: 10px 20px;
+                max-width: 80%; /* Garante que o botão caiba na tela */
             }
 
             h1 {
-                font-size: 1.8em;
+                font-size: 1.6em;
+            }
+
+            h2 {
+                font-size: 1.4em;
             }
 
             .form-section {
-                padding: 20px;
+                padding: 15px;
+            }
+
+            .form-section input, .form-section textarea {
+                padding: 6px;
+            }
+
+            .highlight, footer {
+                padding: 10px;
             }
         }
     </style>
