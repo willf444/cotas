@@ -16,6 +16,7 @@
             background-color: #0A1C3A;
             color: #fff;
             line-height: 1.6;
+            overflow-x: hidden; /* Impede rolagem horizontal */
         }
 
         .container {
@@ -23,6 +24,13 @@
             margin: 0 auto;
             padding: 20px;
             text-align: center;
+            width: 100%; /* Garante que o container não exceda a largura da tela */
+            box-sizing: border-box; /* Inclui padding na largura total */
+        }
+
+        img, iframe, video, object {
+            max-width: 100%; /* Impede que imagens excedam a largura do contêiner */
+            height: auto;
         }
 
         header {
@@ -170,24 +178,28 @@
         }
 
         @media (max-width: 768px) {
-    .card {
-        width: 100%;
-        padding: 15px; /* Reduzindo o padding para telas menores */
-    }
+            .container {
+                padding: 10px; /* Reduz o padding em telas menores para evitar overflow */
+            }
 
-    .cta-button {
-        display: block;
-        margin: 10px auto;
-    }
+            .card {
+                width: 100%;
+                padding: 15px;
+            }
 
-    h1 {
-        font-size: 1.8em; /* Reduzindo o tamanho do título em telas menores */
-    }
+            .cta-button {
+                display: block;
+                margin: 10px auto;
+            }
 
-    .form-section {
-        padding: 20px; /* Reduzindo o padding do formulário em telas menores */
-    }
-}
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .form-section {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -201,7 +213,7 @@
         <div class="highlight">
             <h2>🔥 Cotas Contempladas e Sorteadas Disponíveis!</h2>
             <p>Quer agilizar seu sonho? Tenho cotas já contempladas para você sair na frente! Consulte agora.</p>
-            <a href="https://wa.me/5541996891104?text=Olá! Quero saber mais sobre cotas contempladas!" class="cta-button" target="_blank">Fale comigo no WhatsApp</a>
+            <a href="https://wa.me/5511999999999?text=Olá! Quero saber mais sobre cotas contempladas!" class="cta-button" target="_blank">Fale comigo no WhatsApp</a>
         </div>
 
         <div class="section consorcio">
@@ -247,7 +259,7 @@
         <div class="form-section">
             <h2>Entre em Contato e Realize Seu Sonho!</h2>
             <p>Preencha o formulário abaixo e eu te ajudo a encontrar a melhor solução para você.</p>
-            <form action="mailto:adm@cotas.men" method="post" enctype="text/plain">
+            <form action="https://formspree.io/f/seu-id-aqui" method="POST">
                 <input type="text" name="nome" placeholder="Seu Nome" required>
                 <input type="tel" name="telefone" placeholder="Seu Telefone" required>
                 <input type="email" name="email" placeholder="Seu E-mail" required>
@@ -258,13 +270,13 @@
 
         <footer>
             <div class="contact-buttons">
-                <a href="https://wa.me/5541996891104?text=Olá! Quero saber mais sobre consórcios e seguros!" class="cta-button" target="_blank">
+                <a href="https://wa.me/5511999999999?text=Olá! Quero saber mais sobre consórcios e seguros!" class="cta-button" target="_blank">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 0C5.373 0 0 5.373 0 12c0 2.132.558 4.222 1.615 6.06L0 24l5.94-1.615A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.132 0-4.222-.558-6.06-1.615l-.428-.257-3.524.957.957-3.524-.257-.428A9.956 9.956 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.714-6.714c-.314-.157-1.885-.943-2.171-1.057-.286-.114-.5-.157-.714.157-.214.314-.828.714-1.028.857-.2.143-.4.157-.614 0-.214-.157-.9-.5-1.714-1.6-.614-.857-1.028-1.914-1.143-2.229-.114-.314 0-.471.157-.628.143-.143.314-.357.471-.571.157-.214.214-.357.314-.571.1-.214.057-.357-.028-.5-.086-.143-.771-1.857-.943-2.286-.171-.429-.343-.357-.471-.357-.114 0-.257 0-.4 0-.143 0-.371.057-.571.286-.2.229-1.057 1.057-1.057 2.571 0 1.514 1.086 2.971 1.243 3.171.157.2 2.171 3.314 5.257 4.657.714.314 1.271.5 1.714.643.714.229 1.371.2 1.885.114.571-.1 1.714-.714 1.957-1.4.243-.686.243-1.286.171-1.4-.071-.114-.286-.171-.571-.329z" fill="#fff"/>
                     </svg>
                     WhatsApp
                 </a>
-                <a href="mailto:adm@cotas.men" class="cta-button">
+                <a href="mailto:seuemail@exemplo.com" class="cta-button">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v12h16V6H4zm8 7l8-5H4l8 5zm-6 2h12v2H6v-2z" fill="#fff"/>
                     </svg>
